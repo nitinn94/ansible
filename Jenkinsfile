@@ -7,12 +7,12 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-repo.git'  // Fetch your codebase
+                git branch: 'main', url: 'https://github.com/nitinn94/ansible.git'  // Fetch your codebase
             }
         }
         stage('Run Ansible Playbook') {
             steps {
-                sshagent(['your-ssh-credentials-id']) {
+                sshagent(['Jenkins-private-key']) {
                     sh '''
                     ansible-playbook -i ${ANSIBLE_HOST}, \
                                      -e kubeconfig_path=${KUBECONFIG_PATH} \
