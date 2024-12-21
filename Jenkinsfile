@@ -16,7 +16,7 @@ pipeline {
                     sh '''
                     ansible-playbook -i ${ANSIBLE_HOST}, \
                                      -e kubeconfig_path=${KUBECONFIG_PATH} \
-                                     deploy.yml  // Run the Ansible playbook
+                                     deploy.yml  # Run the Ansible playbook
                     '''
                 }
             }
