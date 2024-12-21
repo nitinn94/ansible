@@ -1,5 +1,5 @@
 pipeline {
-    agent {'label slave-2'}
+    agent {label 'slave-2'}
     environment {
         ANSIBLE_HOST = '172.31.25.202'        // The machine where Ansible is installed
         KUBECONFIG_PATH = '/home/ubuntu/.kube/config'    // Path to the Kubernetes kubeconfig file
