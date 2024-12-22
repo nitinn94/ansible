@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: my-app-container
-          image: my-app-image:latest
+          image: nginx:latest
           ports:
             - containerPort: 80
 ---
@@ -31,4 +31,5 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: LoadBalancer
+      nodePort: 30080
+  type: NodePort
